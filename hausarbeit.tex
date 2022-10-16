@@ -1,0 +1,73 @@
+\documentclass[11pt,a4paper,toc=bibliography,toc=listof,titlepage=firstiscover]{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\usepackage{pdfsync}
+\usepackage{blindtext}
+\usepackage[ngerman]{babel}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{multirow}
+%Schriftarten hier definieren
+\usepackage{lmodern}
+%\usepackage{tgheros}
+%\renewcommand*\familydefault{\sfdefault}
+%\usepackage{tgpagella}
+\usepackage[babel,german=guillemets]{csquotes}
+\usepackage[style=authoryear-icomp]{biblatex}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\addbibresource{literatur.bib}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=black, citecolor=black}
+%Abstand der Einträge im Literaturverzeichnis als em
+\setlength\bibitemsep{0.75em}
+%Kein Einzug bei einem neuen Absatz
+\setlength{\parindent}{0mm}
+%Inhaltsverzeichnis ohne eigene Seitenzahl
+\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}} 
+\usepackage[left=3cm,right=2.5cm,top=2.5cm,bottom=2cm]{geometry}
+
+%Daten des Deckblatts
+  \titlehead
+  {
+    {
+      \begin{center}
+        \vspace{2.5cm}
+        \includegraphics[scale=0.3]{resources/nak-logo.png}
+      \end{center}
+    }
+  	%M.Sc. Angewandte Informatik
+  }
+  \subject{Hausarbeit}
+  \title{Fallbeispiel Versicherung}
+    \subtitle{Vorlesung Data Analytics}
+    \author{Anna Hoege \and Tjark Radewaldt}
+  \date{\small{Hamburg \& Hannover, den \today}}
+  \publishers{Betreut durch Prof. Dr. Michael Schulz}
+\begin{document}
+%Titelseite erzeugen
+\maketitle
+%Der Nachfolgende Text wird 1,5-zeilig gesetzt
+\onehalfspacing
+%Römische Ziffern für Abbildungsverzeichnis
+\pagenumbering{Roman}
+\setcounter{page}{0}
+%Inhaltsverzeichnis erzeugen
+\tableofcontents
+\clearpage
+%Abbildungs und Tabellenverzeichnis
+\listoftables
+\listoffigures
+%ToDo --> Abkürzungsverzeichnis
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+%Datei aus dem Ordner /chapter/ einbinden. So kann man mehrere Textdateien zu einem großen Dokument zusammenfügen.
+\setcounter{chapter}{0}
+\include{chapter/10_kapitel-1.tex}
+%Literaturverzeichnis einfügen
+\printbibliography
+\include{chapter/99_eidesstattliche-erkläerung.tex}
+\end{document}
