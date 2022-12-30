@@ -16,7 +16,7 @@
 %\renewcommand*\familydefault{\sfdefault}
 %\usepackage{tgpagella}
 \usepackage[babel,german=guillemets]{csquotes}
-\usepackage[style=authoryear-icomp]{biblatex}
+\usepackage[style=ieee-alphabetic]{biblatex}
 \usepackage{hyperref}
 \usepackage{csquotes}
 \addbibresource{literatur.bib}
@@ -68,6 +68,7 @@
 \setcounter{chapter}{0}
 \include{chapter/10_kapitel-1.tex}
 %Literaturverzeichnis einfügen
+\renewcommand*{\UrlFont}{\rmfamily}
 \printbibliography
 \include{chapter/99_eidesstattliche-erkläerung.tex}
 \end{document}
